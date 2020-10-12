@@ -4,6 +4,7 @@ public class MyLinkedList<K> {
 
 	public INode head;
 	public INode tail;
+	public int size=0;
 
 	public MyLinkedList() {
 		this.head = null;
@@ -83,6 +84,29 @@ public class MyLinkedList<K> {
 		tempNode.setNext(newNode);
 		newNode.setNext(tempNode1);
 		return tempNode;
+	}
+	
+	public INode deleteAndGetSizeOfList(K key) {
+		INode tempNode = head;
+		while (tempNode != null && tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(key)) {
+				break;
+			} else {
+				tempNode = tempNode.getNext();
+			}
+		}
+		tempNode.setNext(tempNode.getNext().getNext());
+		size--;
+		return tempNode;
+	}
+
+	public int size() {
+		INode<K> n = head;
+		while (n != null) {
+			size++;
+			n = n.getNext();
+		}
+		return size;
 	}
 	
 	public void printMyNodes() {

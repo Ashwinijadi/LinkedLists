@@ -111,5 +111,21 @@ public class MyLinkedListTest {
 		assertEquals(secondNode, search);
 		myLinkedList.printMyNodes();
 	}
+	
+	@Test
+	public void deleteElementAndGetSizeofLinkedListTest() {
+		MyNode<Integer> firstNode = new MyNode<Integer>(56);
+		MyNode<Integer> secondNode = new MyNode<Integer>(30);
+		MyNode<Integer> thirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> fourthNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(firstNode);
+		myLinkedList.add(secondNode);
+		myLinkedList.add(thirdNode);
+		myLinkedList.add(fourthNode);
+		MyNode<Integer> delete = (MyNode<Integer>) myLinkedList.deleteAndGetSizeOfList(40);
+		assertEquals(thirdNode, delete);
+		System.out.println(myLinkedList.size());
+	}
 
 }
