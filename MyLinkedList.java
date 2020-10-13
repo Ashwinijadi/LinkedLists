@@ -109,6 +109,10 @@ public class MyLinkedList<K> {
 		return size;
 	}
 	
+	public void sort() {
+		
+	}
+	
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes : ");
 		INode tempNode = head;
